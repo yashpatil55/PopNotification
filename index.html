@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CleverTap</title>
-
+<head>
     <script type="text/javascript">
       var clevertap = {
         event: [],
@@ -38,29 +33,98 @@
         clevertap.event.push("Product viewed Event", eventProperties);
       })();
 
-    /*  clevertap.notifications.push({
+   /*   clevertap.notifications.push({
         titleText: "Would you like to receive Push Notifications?",
         bodyText:
           "We promise to only send you relevant content and give you updates on your transactions",
         okButtonText: "Sign me up!",
         rejectButtonText: "No thanks",
-        okButtonColor: "#F28046",
+        okButtonColor: "#3CB043",
         askAgainTimeInSeconds: 5,
         serviceWorkerPath: "/gg.js",
-      }); 
-      */
-     
-    </script>
-  </head>
-  <body>
-    <h1>CleverTap</h1>
-    <button id="script">Button</button>
-    <script>
-      document.getElementById("script").addEventListener("click", function () {
-        alert("Button clicked!");
-      });
-    </script>
-    <div class="btn">CLOSE</div>
+      }); */
+         
+   </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('demo4.png'); /* Replace 'background_image.jpg' with the path to your image */
+            height: auto;
+            width: auto;
+            background-position: center;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent background to improve readability */
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            color: #fff; /* Changing text color to improve readability */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Simple Website</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section>
+        <button id="script">Click Me</button>
+        <h2>About Us</h2>
+        <p>This is a simple website created with HTML.</p>
+        <button>Learn More</button>
+        <button>Contact Us</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 My Simple Website. All rights reserved.</p>
+    </footer>
     <div class="btn">CLOSE</div>
 <script>
 var btn = document.querySelector('.btn');
@@ -95,6 +159,10 @@ function closePopUp() {
     // Append message element to the container
     messageContainer.appendChild(messageElement);
 </script>
-
-  </body>
+</body>
+<script>
+	document.getElementById("script").addEventListener("click", function () {
+	  alert("Button clicked!");
+	});
+  </script>
 </html>
