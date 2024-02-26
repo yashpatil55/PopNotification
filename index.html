@@ -31,6 +31,7 @@
           "MSG-push": true,
         };
         clevertap.event.push("Product viewed Event", eventProperties);
+	clevertap.event.push("productview1", eventProperties);
       })();
    </script>
     <meta charset="UTF-8">
@@ -117,7 +118,6 @@
 </body>
 <script>
 	document.getElementById("inbox").addEventListener("click", function () {
-	 clevertap.getAllInboxMessages() 
 	});
   </script>
 </html>
