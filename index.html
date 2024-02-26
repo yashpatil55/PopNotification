@@ -117,6 +117,7 @@
     </nav>
     <section>
         <button id="script">Click Me</button>
+	<button id="inbox">Click Me</button>
         <h2>About Us</h2>
         <p>This is a simple website created with HTML.</p>
         <button>Learn More</button>
@@ -125,40 +126,6 @@
     <footer>
         <p>&copy; 2024 My Simple Website. All rights reserved.</p>
     </footer>
-    <div class="btn">CLOSE</div>
-<script>
-var btn = document.querySelector('.btn');
-var wrapper = window.parent.document.getElementById('wizParDiv2');
-btn.addEventListener('click', closePopUp);
-function closePopUp() { 
-  setTimeout(() => {
-    wrapper.remove();
-  }, 0);
-}
-</script>
-<div id="messageContainer"></div>
-
-<script>
-    // Your JSON data
-    var jsonData = {
-        "msgContent": {
-            "html": "<div>This is a banner template</div>",
-            "type": 1,
-            "templateType": "banner"
-        },
-        "msgId": "1708925650_20242602"
-    };
-
-    // Create message container element
-    var messageContainer = document.getElementById('messageContainer');
-
-    // Create message element
-    var messageElement = document.createElement('div');
-    messageElement.innerHTML = jsonData.msgContent.html;
-
-    // Append message element to the container
-    messageContainer.appendChild(messageElement);
-</script>
 </body>
 <script>
 	document.getElementById("script").addEventListener("click", function () {
