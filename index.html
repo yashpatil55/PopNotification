@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleverTap</title>
+
+    <script type="text/javascript">
+      var clevertap = {
+        event: [],
+        profile: [],
+        account: [],
+        onUserLogin: [],
+        notifications: [],
+        privacy: [],
+      };
+      clevertap.account.push({ id: "TEST-RRZ-K79-7W7Z" });
+      clevertap.privacy.push({ optOut: false });
+      clevertap.privacy.push({ useIP: false });
+      (function () {
+        var wzrk = document.createElement("script");
+        wzrk.type = "text/javascript";
+        wzrk.async = true;
+        wzrk.src =
+          ("https:" == document.location.protocol
+            ? "https://d2r1yp2w7bby2u.cloudfront.net"
+            : "http://static.clevertap.com") + "/js/a.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(wzrk, s);
+        var eventProperties = {
+          "Product id": 1,
+          "Product Name": "CleverTap",
+          Name: "Yash Patil",
+          Email: "yash@gmail.com",
+          "MSG-push": true,
+        };
+        clevertap.event.push("Product viewed Event", eventProperties);
+      })();
+
+    /*  clevertap.notifications.push({
+        titleText: "Would you like to receive Push Notifications?",
+        bodyText:
+          "We promise to only send you relevant content and give you updates on your transactions",
+        okButtonText: "Sign me up!",
+        rejectButtonText: "No thanks",
+        okButtonColor: "#F28046",
+        askAgainTimeInSeconds: 5,
+        serviceWorkerPath: "/gg.js",
+      }); 
+      */
+     
+    </script>
+  </head>
+  <body>
+    <h1>CleverTap</h1>
+    <button id="script">Button</button>
+    <script>
+      document.getElementById("script").addEventListener("click", function () {
+        alert("Button clicked!");
+      });
+    </script>
+    <div class="btn">CLOSE</div>
+    <div class="btn">CLOSE</div>
+<script>
+var btn = document.querySelector('.btn');
+var wrapper = window.parent.document.getElementById('wizParDiv2');
+btn.addEventListener('click', closePopUp);
+function closePopUp() { 
+  setTimeout(() => {
+    wrapper.remove();
+  }, 0);
+}
+</script>
+<div id="messageContainer"></div>
+
+<script>
+    // Your JSON data
+    var jsonData = {
+        "msgContent": {
+            "html": "<div>This is a banner template</div>",
+            "type": 1,
+            "templateType": "banner"
+        },
+        "msgId": "1708925650_20242602"
+    };
+
+    // Create message container element
+    var messageContainer = document.getElementById('messageContainer');
+
+    // Create message element
+    var messageElement = document.createElement('div');
+    messageElement.innerHTML = jsonData.msgContent.html;
+
+    // Append message element to the container
+    messageContainer.appendChild(messageElement);
+</script>
+
+  </body>
+</html>
