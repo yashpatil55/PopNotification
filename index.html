@@ -1,123 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <script type="text/javascript">
-      var clevertap = {
-        event: [],
-        profile: [],
-        account: [],
-        onUserLogin: [],
-        notifications: [],
-        privacy: [],
-      };
-      clevertap.account.push({ id: "ZWW-WWW-WWRZ" });
-      clevertap.privacy.push({ optOut: false });
-      clevertap.privacy.push({ useIP: false });
-      (function () {
-        var wzrk = document.createElement("script");
-        wzrk.type = "text/javascript";
-        wzrk.async = true;
-        wzrk.src =
-          ("https:" == document.location.protocol
-            ? "https://d2r1yp2w7bby2u.cloudfront.net"
-            : "http://static.clevertap.com") + "/js/a.js";  
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(wzrk, s);
-        var eventProperties = {
-          "Product id": 1,
-          "Product Name": "CleverTap",
-          Name: "Yash Patil",
-          Email: "yash@gmail.com",
-          "MSG-push": true,
-        };
-        clevertap.event.push("Product viewed Event", eventProperties);
-	clevertap.event.push("productview1", eventProperties);
-      })();
+	<title>Simple web page</title>
+	<script type="text/javascript">
+		var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+		clevertap.account.push({"id": "ZWW-WWW-WWRZ"});
+		clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+		clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+			(function () {
+					var wzrk = document.createElement('script');
+					wzrk.type = 'text/javascript';
+					wzrk.async = true;
+					wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(wzrk, s);
+					
+			})();
    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('demo4.png'); /* Replace 'background_image.jpg' with the path to your image */
-            height: auto;
-            width: auto;
-            background-position: center;
-        }
-        header {
-            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent background to improve readability */
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-            color: #fff; /* Changing text color to improve readability */
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 0 10px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Simple Website</h1>
-    </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-    <section>
-        <button id="script">Click Me</button>
-        <button id="inbox">Click Me</button>
-        <h2>About Us</h2>
-        <p>This is a simple website created with HTML.</p>
-        <button>Learn More</button>
-        <button>Contact Us</button>
-    </section>
-    <footer>
-        <p>&copy; 2024 My Simple Website. All rights reserved.</p>
-    </footer>
-</body>
-<script>
-	document.getElementById("inbox").addEventListener("click", function () {
-	});
+
+<script type="module">
+	// Import the functions you need from the SDKs you need
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+	import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+  
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+	  apiKey: "AIzaSyD3R4gAS4AqH9bxzHorXM3NxnlXN_I2OGs",
+	  authDomain: "clevertap-demo-d20b1.firebaseapp.com",
+	  projectId: "clevertap-demo-d20b1",
+	  storageBucket: "clevertap-demo-d20b1.appspot.com",
+	  messagingSenderId: "1064052206509",
+	  appId: "1:1064052206509:web:9300520e1464c03a8dcf24",
+	  measurementId: "G-W89R246VCS"
+	};
+  
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const analytics = getAnalytics(app);
   </script>
+
+	<script>
+			function btn()
+			{
+				clevertap.event.push("Aditi push event triggered");
+				clevertap.notifications.push({
+				"titleText": "Would you like to receive Push Notifications?",
+				"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+				"okButtonText": "Sign me up!",
+				"rejectButtonText": "No thanks",
+				"okButtonColor":"#F28046",
+				"serviceWorkerPath": "./serviceWorkerPath.js"
+  });
+			}
+
+		function webpopup()
+	{
+		clevertap.event.push("Aditi pop event triggered");
+		clevertap.notifications.push({
+		"titleText": "Would you like to receive Push Notifications?",
+		"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+		"okButtonText": "Sign me up!",
+		"rejectButtonText": "No thanks",
+		"okButtonColor":"#F28046",
+		"serviceWorkerPath": "./serviceWorkerPath.js"
+});
+	}
+
+		function webinbox()
+	{
+		clevertap.event.push("Aditi web inbox event triggered");
+		clevertap.notifications.push({
+		"titleText": "Would you like to receive Push Notifications?",
+		"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+		"okButtonText": "Sign me up!",
+		"rejectButtonText": "No thanks",
+		"okButtonColor":"#F28046",
+		"serviceWorkerPath": "./serviceWorkerPath.js"
+});
+	}
+
+		function webnative()
+	{
+		clevertap.event.push("web native display event triggered");
+	}
+
+		function webexit()
+	{
+		clevertap.event.push("web exit intent event triggered");
+	}
+
+		</script>
+	
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="clever">
+		<p>Welcome to my demo webpage</p>
+		<div class="native"></div>
+		<button>Clevertap click</button><br><br>
+		<button onclick="btn()">Clevertap push</button><br><br>
+		<button onclick="webpopup()">Clevertap popup</button><br><br>
+		<button id="inbox" onclick="webinbox()">Clevertap web inbox</button><br><br>
+		<div id="nativedisplay">
+		<button onclick="webnative()">Clevertap web native display</button><br>
+		</div><br><br>
+		<button onclick="webexit()">Clevertap web exit intent</button><br>
+	</div>
+</body>
+
 </html>
