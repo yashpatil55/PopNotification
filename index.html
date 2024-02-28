@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Simple web page</title>
+
+
 	<script type="text/javascript">
 		var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
 		clevertap.account.push({"id": "ZWW-WWW-WWRZ"});
@@ -17,99 +18,140 @@
 					
 			})();
    </script>
-
-<script type="module">
-	// Import the functions you need from the SDKs you need
-	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-	import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-	// TODO: Add SDKs for Firebase products that you want to use
-	// https://firebase.google.com/docs/web/setup#available-libraries
+   
   
-	// Your web app's Firebase configuration
-	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	const firebaseConfig = {
-	  apiKey: "AIzaSyD3R4gAS4AqH9bxzHorXM3NxnlXN_I2OGs",
-	  authDomain: "clevertap-demo-d20b1.firebaseapp.com",
-	  projectId: "clevertap-demo-d20b1",
-	  storageBucket: "clevertap-demo-d20b1.appspot.com",
-	  messagingSenderId: "1064052206509",
-	  appId: "1:1064052206509:web:9300520e1464c03a8dcf24",
-	  measurementId: "G-W89R246VCS"
-	};
-  
-	// Initialize Firebase
-	const app = initializeApp(firebaseConfig);
-	const analytics = getAnalytics(app);
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('demo4.png'); /* Replace 'background_image.jpg' with the path to your image */
+            height: auto;
+            width: auto;
+            background-position: center;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent background to improve readability */
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            color: #fff; /* Changing text color to improve readability */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
 
 	<script>
-			function btn()
-			{
-				clevertap.event.push("Aditi push event triggered");
-				clevertap.notifications.push({
-				"titleText": "Would you like to receive Push Notifications?",
-				"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
-				"okButtonText": "Sign me up!",
-				"rejectButtonText": "No thanks",
-				"okButtonColor":"#F28046",
-				"serviceWorkerPath": "./serviceWorkerPath.js"
-  });
-			}
-
-		function webpopup()
-	{
-		clevertap.event.push("Aditi pop event triggered");
-		clevertap.notifications.push({
-		"titleText": "Would you like to receive Push Notifications?",
-		"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
-		"okButtonText": "Sign me up!",
-		"rejectButtonText": "No thanks",
-		"okButtonColor":"#F28046",
-		"serviceWorkerPath": "./serviceWorkerPath.js"
-});
-	}
-
-		function webinbox()
-	{
-		clevertap.event.push("Aditi web inbox event triggered");
-		clevertap.notifications.push({
-		"titleText": "Would you like to receive Push Notifications?",
-		"bodyText": "We promise to only send you relevant content and give you updates on your transactions",
-		"okButtonText": "Sign me up!",
-		"rejectButtonText": "No thanks",
-		"okButtonColor":"#F28046",
-		"serviceWorkerPath": "./serviceWorkerPath.js"
-});
-	}
-
-		function webnative()
-	{
-		clevertap.event.push("web native display event triggered");
-	}
-
-		function webexit()
-	{
-		clevertap.event.push("web exit intent event triggered");
-	}
-
-		</script>
+  let onuserlogin = () => {
+	  clevertap.onUserLogin.push({
+		"Name": "Yash Patil",
+		"Identity":"19330055" ,
+		"Email": "yash@gmail.com",
+		"Gender": "M",
+		"Sign Up": new Date(),
+		"MSG-email": true,
+		"MSG-push": true,
+		"MSG-sms": true,
+		"MSG-whatsapp": true,
+	});
+  }
+	  
+    let pushnotif = () => {
+        clevertap.notifications.push({
+            "titleText": "Would you like to receive Push Notifications?",
+            "bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+            "okButtonText": "Sign me up!",
+            "rejectButtonText": "No thanks",
+            "okButtonColor": "#F28046",
+            "serviceWorkerPath": "clevertap_sw.js" // path to your custom service worker file
+        });
+    };
+                
+   let pushnotification = () => {
+                clevertap.event.push("productview1");
+            };
+   let popup = () => {
+                clevertap.event.push("WebPop");
+            };
+   let inboxin = () => {
+                clevertap.event.push("WebInboxIn");
+            };
+   let webnative = () => {
+                clevertap.event.push("NativeDis");
+            };
+</script>
 	
-  <link rel="stylesheet" href="style.css">
-</head>
+    <header>
+        <h1>Welcome to My Simple Website</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section>
+        <button id="script">Click Me</button>
+        <button id="inbox">Click Me</button>
+        <h2>About Us</h2>
+        <p>This is a simple website created with HTML.</p>
+        <button class="button" id="loc" onclick="pushnotif()">Send Notification</button>
+	<button class="button" id="push" onclick="pushnotification()">Web Push </button>
+	<button class="button" id="popup" onclick="popup()">Web Pop-up </button>
+	<button class="button" id="inbox" onclick="inboxin()">Web Inbox </button>
+	<button class="button" id="onuser" onclick="onuserlogin()">On User Login</button>
+	<button class="button" id="webnet" onclick="webnative()">Web Native </button>
+	<div id="nativedisplay"></div><br><br>
 
-<body>
-	<div id="clever">
-		<p>Welcome to my demo webpage</p>
-		<div class="native"></div>
-		<button>Clevertap click</button><br><br>
-		<button onclick="btn()">Clevertap push</button><br><br>
-		<button onclick="webpopup()">Clevertap popup</button><br><br>
-		<button id="inbox" onclick="webinbox()">Clevertap web inbox</button><br><br>
-		<div id="nativedisplay">
-		<button onclick="webnative()">Native Display</button><br>
-		</div><br><br>
-		<button onclick="webexit()">Clevertap web exit intent</button><br>
-	</div>
+
+
+
+    </section>
+    <footer>
+        <p>&copy; 2024 My Simple Website. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
+ 
