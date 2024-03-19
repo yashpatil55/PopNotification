@@ -69,10 +69,16 @@
             bottom: 0;
             width: 100%;
         }
-	img {
-	    height: 100px;
-            width: 50px;
-	    }
+	#dem12 {
+    width: 50%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 30%; /* Ensure image doesn't exceed its container */
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    /* Add any additional styling you need */
+}
     </style>
     <script type="text/javascript">
         var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
@@ -107,7 +113,7 @@
     <br>
   <div id="container">
 	<div class="close">&times;</div>
-  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
+  <img id="dem12" src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
   <div class="message">
   	Hello <span id="user-name">user</span>,
    	<p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
