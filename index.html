@@ -86,8 +86,25 @@
             s.parentNode.insertBefore(wzrk, s);
         })();
     </script>
+    <script>
+ function renderCartDropOffPersonalisationCampaign(data) {
+ const name = data.kv.Name;
+  const product = data.kv.Product;
+  const containerEl = document.getElementById('container')
+  const userNameEl = containerEl.querySelector('#user-name')
+  usernameEl.innerText = name
+  const productNameEl = containerEl.querySelector('#product-name')
+  productNameEl.innerText = product 
+  clevertap.renderNotificationViewed(data);
+  containerEl.addEventListener('click', () => {
+  	clevertap.renderNotificationClicked(data)
+  });
+} 
+    </script>
 </head>
 <body>
+    
+    
     <header>
         <h1>Welcome to My Simple Website</h1>
     </header>
@@ -100,6 +117,17 @@
      <div id="nativedis"><h1>Native Here</h1></div>
     <br>
     <br>
+  <div id="container">
+	<div class="close">&times;</div>
+  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
+  <div class="message">
+  	Hello <span id="user-name">user</span>,
+   	<p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
+    <p>We get it - it's fabulous.</p>
+   	<p>Use SALE20 and avail 20% off</p>
+    <p>What are you waiting for??</p>
+  </div>  
+</div>
     <div class="button-container">
     <button class="button" id="loc" onclick="pushnotif()">Send Notification</button>
     <button class="button" id="push" onclick="pushnotification()">Web Push </button>
@@ -161,6 +189,16 @@
         };
         let wbnative = () => {
             clevertap.event.push("NewNative");
+            document.addEventListener("CT_web_native_display", function(event) {
+            const data = event.detail;
+	        const topic = data.kv.topic;
+	        switch (topic) {
+		    case "Cart drop-off": {
+			renderCartDropOffPersonalisationCampaign(data)
+			break;
+   	}
+  }
+});
         };
     </script>
 </body>
