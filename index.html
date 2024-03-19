@@ -107,6 +107,7 @@
     <button class="button" id="inbox" onclick="inboxin()">Web Inbox </button>
     <button class="button" id="onuser" onclick="onuserlogin()">On User Login</button>
     <button class="button" id="webnet" onclick="webnative()">Web Native </button>
+    <button class="button" id="webnati" onclick="wbnative()">Web Native </button>
     </div>
     
     <script>
@@ -157,6 +158,9 @@
         
         let webnative = () => {
             clevertap.event.push("NativeDisplay");
+        };
+        let wbnative = () => {
+            clevertap.event.push("NewNative");
         };
     </script>
 </body>
